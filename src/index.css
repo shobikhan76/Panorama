@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+
+/* Project base overrides */
+@layer base {
+  :root {
+    --bg: #000000;
+    --fg: #e5e7eb;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* Tailwind import removed — using a minimal base stylesheet */
+/* Previous styles have been replaced with Tailwind directives */
+
+/* The original minimal stylesheet has been removed */
+/* Tailwind import removed — using a minimal base stylesheet */
+:root {
+  --bg: #ffffff;
+  --fg: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
