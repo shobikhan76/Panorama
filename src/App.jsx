@@ -21,7 +21,7 @@ function App() {
         <CustomCursor />
         <PageLoader />
         <Navbar />
-        <BackToTop />
+        {/* <BackToTop /> */}
 
         <Routes>
           <Route path="/" element={<Home />} />
