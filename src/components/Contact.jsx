@@ -295,7 +295,7 @@ const Contact = () => {
 
   return (
     <div className="bg-black text-gray-300 font-sans">
-      {/* Contact Hero Section - Fixed padding/margin */}
+      {/* Contact Hero Section - Responsive */}
       <section className="contact-hero min-h-[60vh] flex items-center relative overflow-hidden bg-black">
         <canvas
           ref={heroCanvasRef}
@@ -325,7 +325,7 @@ const Contact = () => {
           }}
         />
 
-        {/* Floating Shapes */}
+        {/* Floating Shapes - Responsive */}
         <motion.div
           animate={{
             x: [0, -30, 30, 0],
@@ -333,7 +333,7 @@ const Contact = () => {
             scale: [1, 1.1, 1],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="contact-shape contact-shape-1 absolute -top-[100px] -right-[100px] w-[400px] h-[400px] rounded-full"
+          className="contact-shape contact-shape-1 absolute -top-[100px] -right-[100px] w-[300px] h-[300px] sm:w-[350px] sm:h-[350px] md:w-[400px] md:h-[400px] rounded-full"
           style={{
             background:
               "linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.1))",
@@ -348,7 +348,7 @@ const Contact = () => {
             scale: [1, 1.05, 1],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="contact-shape contact-shape-2 absolute -bottom-[50px] -left-[50px] w-[300px] h-[300px] rounded-full"
+          className="contact-shape contact-shape-2 absolute -bottom-[50px] -left-[50px] w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] rounded-full"
           style={{
             background:
               "linear-gradient(135deg, rgba(20, 184, 166, 0.25), rgba(13, 148, 136, 0.1))",
@@ -357,63 +357,63 @@ const Contact = () => {
           }}
         />
 
-        <div className="contact-hero-container max-w-[1400px] mx-auto px-[60px] relative z-10 text-center">
-          <div className="contact-hero-badge reveal-up inline-flex items-center gap-[12px] px-[10px_24px_10px_10px] bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[50px] text-[0.85rem] font-medium text-blue-300 mb-[30px]">
-            <span className="contact-hero-badge-icon w-[32px] h-[32px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-[0.9rem]">
+        <div className="contact-hero-container max-w-[1400px] mx-auto px-[20px] sm:px-[30px] md:px-[60px] relative z-10 text-center">
+          <div className="contact-hero-badge reveal-up inline-flex items-center gap-[12px] px-[10px_24px_10px_10px] bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[50px] text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] font-medium text-blue-300 mb-[25px]">
+            <span className="contact-hero-badge-icon w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem]">
               💬
             </span>
             Let's Connect
           </div>
-          <h1 className="contact-hero-title reveal-up font-serif text-[4.5rem] font-semibold text-white mb-[25px] leading-[1.1] tracking-[-2px]">
+          <h1 className="contact-hero-title reveal-up font-serif text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] font-semibold text-white mb-[20px] sm:mb-[22px] md:mb-[25px] leading-[1.1] tracking-[-2px]">
             Get in{" "}
             <span className="contact-hero-title-gradient bg-gradient-to-br from-blue-400 to-teal-400 bg-clip-text text-transparent">
               Touch
             </span>
           </h1>
-          <p className="contact-hero-subtitle reveal-up text-[1.2rem] text-gray-400 max-w-[600px] mx-auto leading-[1.8]">
+          <p className="contact-hero-subtitle reveal-up text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] text-gray-400 max-w-[600px] mx-auto leading-[1.8]">
             Have a question or want to explore partnership opportunities? We'd
             love to hear from you. Our team is ready to help.
           </p>
         </div>
       </section>
 
-      {/* Contact Main Section - Fixed spacing */}
-      <section className="contact-section py-[100px_60px] bg-black relative">
-        <div className="contact-container max-w-[1400px] mx-auto grid grid-cols-[1fr_1.2fr] gap-[80px] items-start px-[60px]">
+      {/* Contact Main Section - Responsive */}
+      <section className="contact-section py-[60px_20px] sm:py-[80px_30px] md:py-[100px_60px] bg-black relative">
+        <div className="contact-container max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[40px] sm:gap-[60px] md:gap-[80px] items-start px-[20px] sm:px-[30px] md:px-[60px]">
           {/* Contact Info Side */}
           <div className="contact-info">
-            <div className="contact-info-header reveal-left mb-[50px]">
-              <div className="contact-info-label inline-flex items-center gap-[15px] text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[20px]">
-                <span className="contact-info-label-line w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
+            <div className="contact-info-header reveal-left mb-[35px] sm:mb-[42px] md:mb-[50px]">
+              <div className="contact-info-label inline-flex items-center gap-[12px] sm:gap-[15px] text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[15px] sm:mb-[18px] md:mb-[20px]">
+                <span className="contact-info-label-line w-[30px] sm:w-[35px] md:w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
                 Contact Information
               </div>
-              <h2 className="contact-info-title font-serif text-[2.5rem] font-semibold text-white leading-[1.2] mb-[20px]">
+              <h2 className="contact-info-title font-serif text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] font-semibold text-white leading-[1.2] mb-[15px] sm:mb-[18px] md:mb-[20px]">
                 We're Here to Help Your Business Grow
               </h2>
-              <p className="contact-info-desc text-gray-400 text-base leading-[1.8]">
+              <p className="contact-info-desc text-gray-400 text-[0.9rem] sm:text-[0.95rem] md:text-base leading-[1.8]">
                 Reach out to us through any of the channels below. Our dedicated
                 team responds within 24 hours.
               </p>
             </div>
 
-            <div className="contact-cards flex flex-col gap-[25px]">
+            <div className="contact-cards flex flex-col gap-[20px] sm:gap-[22px] md:gap-[25px]">
               {contactInfo.map((card, i) => (
                 <div
                   key={i}
-                  className={`contact-card reveal-left bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[20px] p-[30px] flex items-start gap-[20px] transition-all duration-500 hover:border-blue-500 hover:shadow-xl cursor-pointer`}
+                  className={`contact-card reveal-left bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[20px] p-[20px] sm:p-[25px] md:p-[30px] flex items-start gap-[15px] sm:gap-[18px] md:gap-[20px] transition-all duration-500 hover:border-blue-500 hover:shadow-xl cursor-pointer`}
                 >
-                  <div className="contact-card-icon w-[60px] h-[60px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-[16px] flex items-center justify-center text-[1.5rem] flex-shrink-0 shadow-lg">
+                  <div className="contact-card-icon w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-[16px] flex items-center justify-center text-[1.2rem] sm:text-[1.4rem] md:text-[1.5rem] flex-shrink-0 shadow-lg">
                     {card.icon}
                   </div>
                   <div className="contact-card-content">
-                    <h3 className="text-[1.2rem] font-semibold text-white mb-2">
+                    <h3 className="text-[1.1rem] sm:text-[1.15rem] md:text-[1.2rem] font-semibold text-white mb-2">
                       {card.title}
                     </h3>
                     <div className="space-y-1">
                       {card.lines.map((line, j) => (
                         <p
                           key={j}
-                          className="text-gray-400 text-[0.95rem] leading-[1.6]"
+                          className="text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] leading-[1.6]"
                         >
                           {card.isLink ? (
                             <a
@@ -433,16 +433,16 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="contact-social reveal-left mt-[50px]">
-              <h4 className="text-[1rem] font-semibold text-white mb-[20px]">
+            <div className="contact-social reveal-left mt-[35px] sm:mt-[42px] md:mt-[50px]">
+              <h4 className="text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] font-semibold text-white mb-[15px] sm:mb-[18px] md:mb-[20px]">
                 Follow Us
               </h4>
-              <div className="contact-social-links flex gap-[15px]">
+              <div className="contact-social-links flex gap-[10px] sm:gap-[12px] md:gap-[15px]">
                 {["Li", "X", "Fb", "Ig", "Yt"].map((social, i) => (
                   <a
                     key={i}
                     href="#"
-                    className="social-link w-[50px] h-[50px] bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-[14px] flex items-center justify-center text-white text-base font-semibold hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent hover:-translate-y-1 hover:shadow-xl transition-all"
+                    className="social-link w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-[14px] flex items-center justify-center text-white text-[0.8rem] sm:text-[0.9rem] md:text-base font-semibold hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent hover:-translate-y-1 hover:shadow-xl transition-all"
                   >
                     {social}
                   </a>
@@ -451,15 +451,15 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="contact-form-container reveal-right bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[30px] p-[50px] relative overflow-hidden">
+          {/* Contact Form - Responsive */}
+          <div className="contact-form-container reveal-right bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[30px] p-[25px] sm:p-[35px] md:p-[50px] relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-400"></div>
 
-            <div className="contact-form-header mb-[40px]">
-              <h2 className="contact-form-title font-serif text-[2rem] font-semibold text-white mb-[10px]">
+            <div className="contact-form-header mb-[25px] sm:mb-[30px] md:mb-[40px]">
+              <h2 className="contact-form-title font-serif text-[1.5rem] sm:text-[1.8rem] md:text-[2rem] font-semibold text-white mb-[8px] sm:mb-[10px] md:mb-[10px]">
                 Send Us a Message
               </h2>
-              <p className="contact-form-subtitle text-gray-400 text-[0.95rem]">
+              <p className="contact-form-subtitle text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem]">
                 Fill out the form below and we'll get back to you shortly.
               </p>
             </div>
@@ -467,13 +467,13 @@ const Contact = () => {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="contact-form flex flex-col gap-[25px]"
+              className="contact-form flex flex-col gap-[20px] sm:gap-[22px] md:gap-[25px]"
             >
-              <div className="form-row grid grid-cols-2 gap-[25px]">
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+              <div className="form-row grid grid-cols-1 sm:grid-cols-2 gap-[15px] sm:gap-[20px] md:gap-[25px]">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     First Name{" "}
-                    <span className="form-label-required text-blue-400 text-[0.8rem]">
+                    <span className="form-label-required text-blue-400 text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]">
                       *
                     </span>
                   </label>
@@ -482,13 +482,13 @@ const Contact = () => {
                     name="firstName"
                     placeholder="John"
                     required
-                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
                   />
                 </div>
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     Last Name{" "}
-                    <span className="form-label-required text-blue-400 text-[0.8rem]">
+                    <span className="form-label-required text-blue-400 text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]">
                       *
                     </span>
                   </label>
@@ -497,16 +497,16 @@ const Contact = () => {
                     name="lastName"
                     placeholder="Doe"
                     required
-                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
                   />
                 </div>
               </div>
 
-              <div className="form-row grid grid-cols-2 gap-[25px]">
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+              <div className="form-row grid grid-cols-1 sm:grid-cols-2 gap-[15px] sm:gap-[20px] md:gap-[25px]">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     Email Address{" "}
-                    <span className="form-label-required text-blue-400 text-[0.8rem]">
+                    <span className="form-label-required text-blue-400 text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]">
                       *
                     </span>
                   </label>
@@ -515,45 +515,45 @@ const Contact = () => {
                     name="email"
                     placeholder="john@company.com"
                     required
-                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
                   />
                 </div>
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     name="phone"
                     placeholder="+971 50 123 4567"
-                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
                   />
                 </div>
               </div>
 
-              <div className="form-row grid grid-cols-2 gap-[25px]">
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+              <div className="form-row grid grid-cols-1 sm:grid-cols-2 gap-[15px] sm:gap-[20px] md:gap-[25px]">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     Company Name
                   </label>
                   <input
                     type="text"
                     name="company"
                     placeholder="Your Company"
-                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-input bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all"
                   />
                 </div>
-                <div className="form-group flex flex-col gap-[10px]">
-                  <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+                <div className="form-group flex flex-col gap-[8px] sm:gap-[10px]">
+                  <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                     Subject{" "}
-                    <span className="form-label-required text-blue-400 text-[0.8rem]">
+                    <span className="form-label-required text-blue-400 text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]">
                       *
                     </span>
                   </label>
                   <select
                     name="subject"
                     required
-                    className="form-select bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white focus:border-blue-500 focus:outline-none transition-all"
+                    className="form-select bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white focus:border-blue-500 focus:outline-none transition-all"
                   >
                     <option value="" disabled selected>
                       Select a subject
@@ -569,10 +569,10 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="form-group full-width flex flex-col gap-[10px]">
-                <label className="form-label text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
+              <div className="form-group full-width flex flex-col gap-[8px] sm:gap-[10px]">
+                <label className="form-label text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium text-gray-300 flex items-center gap-2">
                   Message{" "}
-                  <span className="form-label-required text-blue-400 text-[0.8rem]">
+                  <span className="form-label-required text-blue-400 text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem]">
                     *
                   </span>
                 </label>
@@ -581,21 +581,21 @@ const Contact = () => {
                   placeholder="Tell us about your inquiry..."
                   required
                   rows="6"
-                  className="form-textarea bg-white/10 border border-white/10 rounded-[12px] px-5 py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all min-h-[150px] resize-vertical"
+                  className="form-textarea bg-white/10 border border-white/10 rounded-[12px] px-4 sm:px-5 py-3 sm:py-4 text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none transition-all min-h-[120px] sm:min-h-[150px] resize-vertical"
                 ></textarea>
               </div>
 
-              <div className="form-group full-width flex flex-col gap-[10px]">
-                <div className="form-checkbox-group flex items-start gap-[15px]">
+              <div className="form-group full-width flex flex-col gap-[8px] sm:gap-[10px]">
+                <div className="form-checkbox-group flex items-start gap-[12px] sm:gap-[15px]">
                   <input
                     type="checkbox"
                     id="privacyConsent"
                     required
-                    className="form-checkbox w-[22px] h-[22px] border-2 border-white/20 rounded-[6px] appearance-none cursor-pointer relative flex-shrink-0 mt-1 checked:bg-gradient-to-br checked:from-blue-500 checked:to-blue-600"
+                    className="form-checkbox w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[22px] md:h-[22px] border-2 border-white/20 rounded-[6px] appearance-none cursor-pointer relative flex-shrink-0 mt-1 checked:bg-gradient-to-br checked:from-blue-500 checked:to-blue-600"
                   />
                   <label
                     htmlFor="privacyConsent"
-                    className="form-checkbox-label text-gray-400 text-[0.9rem] leading-[1.5]"
+                    className="form-checkbox-label text-gray-400 text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] leading-[1.5]"
                   >
                     I agree to the{" "}
                     <a href="#" className="text-blue-400 hover:underline">
@@ -610,30 +610,30 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={formStatus === "sending"}
-                className={`form-submit inline-flex items-center justify-center gap-[15px] px-[50px] py-5 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-[60px] text-[1rem] font-semibold cursor-pointer transition-all relative overflow-hidden hover:-translate-y-1 hover:shadow-xl ${
+                className={`form-submit inline-flex items-center justify-center gap-[12px] sm:gap-[15px] px-[35px] sm:px-[42px] md:px-[50px] py-4 sm:py-5 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-[60px] text-[0.9rem] sm:text-[0.95rem] md:text-[1rem] font-semibold cursor-pointer transition-all relative overflow-hidden hover:-translate-y-1 hover:shadow-xl ${
                   formStatus === "sending"
                     ? "opacity-60 cursor-not-allowed"
                     : ""
                 }`}
               >
                 {formStatus === "sending" ? "Sending..." : "Send Message"}
-                <span className="form-submit-icon w-6 h-6 bg-white/20 rounded-full flex items-center justify-center transition-all group-hover:translate-x-1">
+                <span className="form-submit-icon w-5 h-5 sm:w-6 sm:h-6 bg-white/20 rounded-full flex items-center justify-center transition-all group-hover:translate-x-1">
                   →
                 </span>
               </button>
 
               {formStatus && (
                 <div
-                  className={`form-status flex items-center gap-[15px] p-5 rounded-[12px] mt-5 ${
+                  className={`form-status flex items-center gap-[12px] sm:gap-[15px] p-4 sm:p-5 rounded-[12px] mt-5 ${
                     formStatus === "success"
                       ? "bg-green-500/10 border border-green-500/30 text-green-400"
                       : "bg-red-500/10 border border-red-500/30 text-red-400"
                   }`}
                 >
-                  <span className="form-status-icon w-10 h-10 rounded-full flex items-center justify-center text-xl">
+                  <span className="form-status-icon w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-lg sm:text-xl">
                     {formStatus === "success" ? "✓" : "✗"}
                   </span>
-                  <span className="form-status-text">
+                  <span className="form-status-text text-[0.85rem] sm:text-[0.9rem] md:text-base">
                     {formStatus === "success"
                       ? "Message sent successfully! We'll get back to you within 24 hours."
                       : "Failed to send message. Please try again or contact us directly."}
@@ -645,52 +645,52 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section - Fixed spacing */}
-      <section className="map-section py-0 px-[60px] pb-[150px] bg-black">
-        <div className="map-container max-w-[1400px] mx-auto px-[60px]">
-          <div className="map-header text-center mb-[60px]">
-            <div className="map-label reveal-up inline-flex items-center gap-[15px] text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[20px]">
-              <span className="map-label-line w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
+      {/* Map Section - Responsive */}
+      <section className="map-section py-0 px-[20px] sm:px-[30px] md:px-[60px] pb-[80px] sm:pb-[120px] md:pb-[150px] bg-black">
+        <div className="map-container max-w-[1400px] mx-auto px-[20px] sm:px-[30px] md:px-[60px]">
+          <div className="map-header text-center mb-[40px] sm:mb-[50px] md:mb-[60px]">
+            <div className="map-label reveal-up inline-flex items-center gap-[12px] sm:gap-[15px] text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[15px] sm:mb-[18px] md:mb-[20px]">
+              <span className="map-label-line w-[30px] sm:w-[35px] md:w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
               Our Locations
             </div>
-            <h2 className="map-title reveal-up font-serif text-[3rem] font-semibold text-white mb-[15px]">
+            <h2 className="map-title reveal-up font-serif text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-semibold text-white mb-[10px] sm:mb-[12px] md:mb-[15px]">
               Global Presence
             </h2>
-            <p className="map-subtitle reveal-up text-gray-400 text-[1.1rem]">
+            <p className="map-subtitle reveal-up text-gray-400 text-[0.95rem] sm:text-[1rem] md:text-[1.1rem]">
               Visit us at any of our offices around the world
             </p>
           </div>
 
-          <div className="map-wrapper reveal-scale relative rounded-[30px] overflow-hidden border border-white/10 shadow-2xl">
+          <div className="map-wrapper reveal-scale relative rounded-[20px] sm:rounded-[25px] md:rounded-[30px] overflow-hidden border border-white/10 shadow-2xl">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-teal-400 to-blue-400 z-10"></div>
             <iframe
-              className="map-iframe w-full h-[500px] border-none grayscale-[100%] invert-[92%] contrast-[85%] hover:grayscale-[50%] hover:contrast-[90%] transition-all"
-              src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d3610.178510693867!2d55.26390731544387!3d25.197197983896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1629789012345!5m2!1sen!2sae"
+              className="map-iframe w-full h-[300px] sm:h-[400px] md:h-[500px] border-none grayscale-[100%] invert-[92%] contrast-[85%] hover:grayscale-[50%] hover:contrast-[90%] transition-all"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178510693867!2d55.26390731544387!3d25.197197983896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sae!4v1629789012345!5m2!1sen!2sae"
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
 
-          <div className="offices-grid grid grid-cols-3 gap-[30px] mt-[60px]">
+          <div className="offices-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] sm:gap-[25px] md:gap-[30px] mt-[40px] sm:mt-[50px] md:mt-[60px]">
             {offices.map((office, i) => (
               <div
                 key={i}
-                className="office-card reveal-up bg-slate-800/70 backdrop-blur-[20px] border border-white/10 rounded-[24px] p-[35px] transition-all duration-500 hover:border-blue-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden"
+                className="office-card reveal-up bg-slate-800/70 backdrop-blur-[20px] border border-white/10 rounded-[20px] sm:rounded-[22px] md:rounded-[24px] p-[25px] sm:p-[30px] md:p-[35px] transition-all duration-500 hover:border-blue-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden"
               >
-                <div className="office-card-flag text-[2.5rem] mb-5">
+                <div className="office-card-flag text-[2rem] sm:text-[2.2rem] md:text-[2.5rem] mb-4 sm:mb-5">
                   {office.flag}
                 </div>
-                <h3 className="text-[1.3rem] font-semibold text-white mb-1">
+                <h3 className="text-[1.1rem] sm:text-[1.2rem] md:text-[1.3rem] font-semibold text-white mb-1">
                   {office.location}
                 </h3>
-                <div className="office-card-location text-blue-400 text-[0.9rem] font-medium mb-5">
+                <div className="office-card-location text-blue-400 text-[0.8rem] sm:text-[0.85rem] md:text-[0.9rem] font-medium mb-4 sm:mb-5">
                   {office.country}
                 </div>
-                <p className="text-gray-400 text-[0.95rem] leading-[1.7] mb-2">
+                <p className="text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] leading-[1.7] mb-2">
                   {office.address}
                 </p>
-                <p className="text-gray-400 text-[0.95rem] leading-[1.7] mb-2">
+                <p className="text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] leading-[1.7] mb-2">
                   <a
                     href={`tel:${office.phone}`}
                     className="text-gray-400 hover:text-blue-400 transition-colors"
@@ -698,7 +698,7 @@ const Contact = () => {
                     {office.phone}
                   </a>
                 </p>
-                <p className="text-gray-400 text-[0.95rem] leading-[1.7]">
+                <p className="text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] leading-[1.7]">
                   <a
                     href={`mailto:${office.email}`}
                     className="text-gray-400 hover:text-blue-400 transition-colors"
@@ -712,44 +712,44 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section - Fixed spacing */}
-      <section className="faq-section py-[150px] px-[60px] bg-gradient-to-b from-slate-900 to-black relative">
+      {/* FAQ Section - Responsive */}
+      <section className="faq-section py-[80px_20px] sm:py-[120px_30px] md:py-[150px_60px] bg-gradient-to-b from-slate-900 to-black relative">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(59,130,246,0.05)_0%,transparent_50%),radial-gradient(ellipse_at_80%_70%,rgba(20,184,166,0.03)_0%,transparent_50%)] pointer-events-none"></div>
 
-        <div className="faq-container max-w-[900px] mx-auto relative z-10 px-[60px]">
-          <div className="faq-header text-center mb-[70px]">
-            <div className="faq-label reveal-up inline-flex items-center gap-[15px] text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[20px]">
-              <span className="faq-label-line w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
+        <div className="faq-container max-w-[900px] mx-auto relative z-10 px-[20px] sm:px-[30px] md:px-[60px]">
+          <div className="faq-header text-center mb-[50px] sm:mb-[60px] md:mb-[70px]">
+            <div className="faq-label reveal-up inline-flex items-center gap-[12px] sm:gap-[15px] text-[0.7rem] sm:text-[0.75rem] md:text-[0.8rem] font-semibold text-blue-400 uppercase tracking-[3px] mb-[15px] sm:mb-[18px] md:mb-[20px]">
+              <span className="faq-label-line w-[30px] sm:w-[35px] md:w-[40px] h-0.5 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full"></span>
               FAQ
             </div>
-            <h2 className="faq-title reveal-up font-serif text-[3rem] font-semibold text-white mb-[15px]">
+            <h2 className="faq-title reveal-up font-serif text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-semibold text-white mb-[10px] sm:mb-[12px] md:mb-[15px]">
               Frequently Asked Questions
             </h2>
-            <p className="faq-subtitle reveal-up text-gray-400 text-[1.1rem]">
+            <p className="faq-subtitle reveal-up text-gray-400 text-[0.9rem] sm:text-[1rem] md:text-[1.1rem]">
               Find answers to common questions about Panorama Group
             </p>
           </div>
 
-          <div className="faq-list flex flex-col gap-[20px]">
+          <div className="faq-list flex flex-col gap-[15px] sm:gap-[18px] md:gap-[20px]">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className="faq-item bg-slate-800/70 backdrop-blur-[20px] border border-white/10 rounded-[20px] overflow-hidden transition-all duration-400 hover:border-blue-500/50"
+                className="faq-item bg-slate-800/70 backdrop-blur-[20px] border border-white/10 rounded-[18px] sm:rounded-[20px] overflow-hidden transition-all duration-400 hover:border-blue-500/50"
                 data-faq
               >
                 <div
-                  className="faq-question px-[30px] py-[25px] flex justify-between items-center cursor-pointer transition-all hover:bg-blue-500/5"
+                  className="faq-question px-[20px] sm:px-[25px] md:px-[30px] py-[20px] sm:py-[22px] md:py-[25px] flex justify-between items-center cursor-pointer transition-all hover:bg-blue-500/5"
                   onClick={toggleFAQ}
                 >
-                  <h3 className="text-[1.1rem] font-medium text-white pr-5">
+                  <h3 className="text-[0.95rem] sm:text-[1rem] md:text-[1.1rem] font-medium text-white pr-4 sm:pr-5">
                     {faq.question}
                   </h3>
-                  <span className="faq-icon w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl flex-shrink-0 transition-all">
+                  <span className="faq-icon w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-lg sm:text-xl flex-shrink-0 transition-all">
                     +
                   </span>
                 </div>
                 <div className="faq-answer max-h-0 overflow-hidden transition-all duration-500">
-                  <div className="faq-answer-content px-[30px] pb-[25px] text-gray-400 text-base leading-[1.8]">
+                  <div className="faq-answer-content px-[20px] sm:px-[25px] md:px-[30px] pb-[20px] sm:pb-[22px] md:pb-[25px] text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-base leading-[1.8]">
                     {faq.answer}
                   </div>
                 </div>

@@ -185,8 +185,7 @@ const Home = () => {
     }
   }, [loading]);
 
-  // 3D Globe Visual
-  // Earth/Globe Visualization
+  // 3D Globe Visualization
   useEffect(() => {
     if (!loading && hero3DCanvasRef.current) {
       const canvas = hero3DCanvasRef.current;
@@ -447,8 +446,8 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-black text-gray-300 font-sans min-h-screen">
-      {/* Loader */}
+    <div className="bg-black text-gray-300 font-sans min-h-screen overflow-x-hidden">
+      {/* Loader - Responsive */}
       <AnimatePresence>
         {loading && (
           <motion.div
@@ -456,12 +455,12 @@ const Home = () => {
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black z-50 flex items-center justify-center"
           >
-            <div className="text-center">
+            <div className="text-center px-4">
               <motion.div
                 initial={{ y: 120, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, staggerChildren: 0.08 }}
-                className="text-4xl md:text-6xl font-bold text-white mb-12 font-serif tracking-widest"
+                className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-8 sm:mb-12 font-serif tracking-widest"
               >
                 {"PANORAMA".split("").map((letter, i) => (
                   <motion.span key={i} className="inline-block" custom={i}>
@@ -469,7 +468,7 @@ const Home = () => {
                   </motion.span>
                 ))}
               </motion.div>
-              <div className="w-80 mx-auto">
+              <div className="w-64 sm:w-80 mx-auto">
                 <div className="h-1 bg-blue-500/20 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full bg-gradient-to-r from-blue-500 to-teal-400 rounded-full shadow-lg shadow-blue-500/50"
@@ -478,13 +477,13 @@ const Home = () => {
                   />
                 </div>
                 <motion.div
-                  className="text-5xl font-light text-white mt-8 font-serif"
+                  className="text-3xl sm:text-4xl md:text-5xl font-light text-white mt-6 sm:mt-8 font-serif"
                   animate={{ opacity: 1 }}
                   initial={{ opacity: 0 }}
                 >
                   {Math.round(progress)}%
                 </motion.div>
-                <div className="text-gray-500 text-sm uppercase tracking-widest mt-4">
+                <div className="text-gray-500 text-xs uppercase tracking-widest mt-3 sm:mt-4">
                   Loading Experience
                 </div>
               </div>
@@ -492,9 +491,8 @@ const Home = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Hero Section */}
-      {/* Hero Section with Earth Visualization */}
-      {/* Hero Section with Real Earth */}
+
+      {/* Hero Section - Responsive */}
       <section className="min-h-screen flex items-center relative overflow-hidden bg-black">
         {/* Three.js Canvas for particles */}
         <canvas
@@ -527,7 +525,7 @@ const Home = () => {
           }}
         />
 
-        {/* Floating Background Shapes */}
+        {/* Floating Background Shapes - Responsive */}
         <div className="absolute top-0 left-0 w-full h-full z-1 overflow-hidden pointer-events-none">
           <motion.div
             animate={{
@@ -536,7 +534,7 @@ const Home = () => {
               scale: [1, 1.05, 0.95, 1],
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-[150px] -right-[150px] w-[500px] h-[500px] rounded-full"
+            className="absolute -top-[100px] -right-[100px] sm:-top-[150px] sm:-right-[150px] w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] rounded-full"
             style={{
               background:
                 "linear-gradient(135deg, rgba(59, 130, 246, 0.25), rgba(37, 99, 235, 0.1))",
@@ -551,7 +549,7 @@ const Home = () => {
               scale: [1, 1.08, 0.92, 1],
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] rounded-full"
+            className="absolute bottom-[-50px] left-[-50px] sm:bottom-[-100px] sm:left-[-100px] w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-full"
             style={{
               background:
                 "linear-gradient(135deg, rgba(20, 184, 166, 0.2), rgba(13, 148, 136, 0.1))",
@@ -561,23 +559,23 @@ const Home = () => {
           />
         </div>
 
-        {/* Hero Container */}
-        <div className="max-w-[1600px] mx-auto px-[60px] grid grid-cols-2 gap-[80px] items-center relative z-10 min-h-screen">
+        {/* Hero Container - Responsive */}
+        <div className="max-w-[1600px] mx-auto px-[20px] sm:px-[30px] md:px-[60px] grid grid-cols-1 lg:grid-cols-2 gap-[40px] sm:gap-[60px] md:gap-[80px] items-center relative z-10 min-h-screen">
           {/* Hero Content */}
-          <div className="relative pt-[80px]">
+          <div className="relative pt-[60px] sm:pt-[80px] text-center lg:text-left">
             {/* Hero Badge */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="inline-flex items-center gap-[12px] px-[10px_24px_10px_10px] bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[50px] text-[0.85rem] font-medium text-blue-300 mb-[35px]"
+              className="inline-flex items-center gap-[12px] px-[10px_24px_10px_10px] bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[50px] text-[0.75rem] sm:text-[0.8rem] md:text-[0.85rem] font-medium text-blue-300 mb-[25px] sm:mb-[30px] md:mb-[35px]"
               style={{
                 background: "rgba(15, 23, 42, 0.7)",
                 border: "1px solid rgba(51, 65, 85, 0.5)",
                 boxShadow: "0 8px 32px rgba(59, 130, 246, 0.2)",
               }}
             >
-              <span className="w-[32px] h-[32px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-[0.8rem] text-white shadow-lg">
+              <span className="w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-[0.7rem] sm:text-[0.8rem] md:text-[0.8rem] text-white shadow-lg">
                 ★
               </span>
               Global Conglomerate Since 1995
@@ -588,7 +586,7 @@ const Home = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="font-serif text-[4.5rem] font-semibold text-white mb-[30px] leading-[1.1] tracking-[-2px]"
+              className="font-serif text-[2.5rem] sm:text-[3.5rem] md:text-[4.5rem] font-semibold text-white mb-[20px] sm:mb-[25px] md:mb-[30px] leading-[1.1] tracking-[-2px]"
             >
               <motion.span
                 initial={{ opacity: 0, y: "100%" }}
@@ -628,7 +626,7 @@ const Home = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-gray-400 text-[1.15rem] leading-[1.8] mb-[45px] max-w-[520px] font-normal"
+              className="text-gray-400 text-[1rem] sm:text-[1.1rem] md:text-[1.15rem] leading-[1.8] mb-[30px] sm:mb-[35px] md:mb-[45px] max-w-[520px] mx-auto lg:mx-0 font-normal"
             >
               Panorama Group transforms possibilities into reality through
               diverse business ventures spanning technology, trade, food,
@@ -640,16 +638,16 @@ const Home = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              className="flex gap-[20px] mb-[70px]"
+              className="flex flex-col sm:flex-row gap-[15px] sm:gap-[20px] mb-[50px] sm:mb-[60px] md:mb-[70px] justify-center lg:justify-start"
             >
               <motion.a
                 href="/brands"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all text-[0.9rem] sm:text-base"
               >
                 Explore Our Brands
-                <span className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+                <span className="w-5 h-5 sm:w-6 sm:h-6 bg-white/20 rounded-full flex items-center justify-center">
                   →
                 </span>
               </motion.a>
@@ -657,7 +655,7 @@ const Home = () => {
                 href="/about"
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-3 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-8 py-4 rounded-full font-medium hover:bg-slate-700/50 hover:text-white transition-all"
+                className="inline-flex items-center gap-3 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 text-blue-300 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-slate-700/50 hover:text-white transition-all text-[0.9rem] sm:text-base"
               >
                 Learn More
               </motion.a>
@@ -668,10 +666,10 @@ const Home = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.1 }}
-              className="flex gap-12"
+              className="flex gap-8 sm:gap-10 md:gap-12 justify-center lg:justify-start"
             >
               <div className="text-center">
-                <div className="text-[3rem] font-bold text-white mb-2 font-serif">
+                <div className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-bold text-white mb-2 font-serif">
                   45<span className="text-blue-400">+</span>
                 </div>
                 <div className="text-gray-500 text-xs uppercase tracking-widest">
@@ -679,7 +677,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-[3rem] font-bold text-white mb-2 font-serif">
+                <div className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-bold text-white mb-2 font-serif">
                   7
                 </div>
                 <div className="text-gray-500 text-xs uppercase tracking-widest">
@@ -687,7 +685,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-[3rem] font-bold text-white mb-2 font-serif">
+                <div className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] font-bold text-white mb-2 font-serif">
                   15K<span className="text-blue-400">+</span>
                 </div>
                 <div className="text-gray-500 text-xs uppercase tracking-widest">
@@ -697,9 +695,9 @@ const Home = () => {
             </motion.div>
           </div>
 
-          {/* Hero Visual with Real Earth */}
-          <div className="relative">
-            <div className="relative h-[500px]">
+          {/* Hero Visual with Real Earth - Responsive */}
+          <div className="relative mt-[40px] lg:mt-0">
+            <div className="relative h-[300px] sm:h-[400px] md:h-[500px]">
               <canvas
                 ref={hero3DCanvasRef}
                 id="hero-3d-canvas"
@@ -707,7 +705,7 @@ const Home = () => {
               />
             </div>
 
-            {/* Floating Elements */}
+            {/* Floating Elements - Responsive */}
             <div className="absolute inset-0">
               <motion.div
                 animate={{
@@ -718,10 +716,10 @@ const Home = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-[25%] right-0 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-5 shadow-2xl"
+                className="absolute top-[25%] right-0 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 sm:p-5 shadow-2xl"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                <div className="flex items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg text-[0.8rem] sm:text-base">
                     🌍
                   </div>
                   <div>
@@ -743,9 +741,9 @@ const Home = () => {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute bottom-[33%] left-0 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-5 shadow-2xl"
+                className="absolute bottom-[33%] left-0 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-4 sm:p-5 shadow-2xl"
               >
-                <div className="text-2xl font-bold text-teal-400 mb-1 font-serif">
+                <div className="text-xl sm:text-2xl font-bold text-teal-400 mb-1 font-serif">
                   +32%
                 </div>
                 <div className="text-gray-400 text-xs uppercase tracking-widest">
@@ -756,18 +754,18 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll Indicator - Responsive */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex items-center gap-5"
+          className="absolute bottom-8 sm:bottom-12 left-1/2 transform -translate-x-1/2 flex items-center gap-3 sm:gap-5"
         >
-          <div className="w-6 h-10 border-2 border-blue-400 rounded-full relative">
+          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-blue-400 rounded-full relative">
             <motion.div
-              animate={{ y: [8, 18, 8], opacity: [1, 0.3, 1] }}
+              animate={{ y: [6, 16, 6], opacity: [1, 0.3, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-2 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 top-2"
+              className="w-1 h-1.5 sm:w-1 sm:h-2 bg-blue-400 rounded-full absolute left-1/2 transform -translate-x-1/2 top-2"
             />
           </div>
           <span className="text-gray-500 text-xs uppercase tracking-widest">
@@ -775,14 +773,15 @@ const Home = () => {
           </span>
         </motion.div>
       </section>
-      {/* About Section */}
-      <section className="py-[150px] px-[60px] bg-black relative overflow-hidden">
-        {/* Background Text */}
+
+      {/* About Section - Responsive */}
+      <section className="py-[80px_20px] sm:py-[120px_30px] md:py-[150px_60px] bg-black relative overflow-hidden">
+        {/* Background Text - Responsive */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-serif text-[20vw] font-extrabold text-blue-500/5 whitespace-nowrap pointer-events-none"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-serif text-[15vw] sm:text-[18vw] md:text-[20vw] font-extrabold text-blue-500/5 whitespace-nowrap pointer-events-none"
           style={{
             textShadow: "0 0 100px rgba(59, 130, 246, 0.05)",
           }}
@@ -790,9 +789,9 @@ const Home = () => {
           PANORAMA
         </motion.div>
 
-        <div className="max-w-[1400px] mx-auto relative z-10">
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start mb-16">
+        <div className="max-w-[1400px] mx-auto px-[20px] sm:px-[30px] md:px-[60px] relative z-10">
+          {/* Section Header - Responsive */}
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 sm:mb-16">
             <div className="mb-8 md:mb-0">
               <motion.div
                 initial={{ opacity: 0, x: -60 }}
@@ -814,7 +813,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                className="text-3xl md:text-5xl font-bold text-white max-w-2xl leading-tight font-serif"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-white max-w-2xl leading-tight font-serif"
               >
                 Building A Legacy of Innovation & Excellence
               </motion.h2>
@@ -833,8 +832,8 @@ const Home = () => {
             </motion.div>
           </div>
 
-          {/* About Grid */}
-          <div className="grid grid-cols-3 gap-[35px]">
+          {/* About Grid - Responsive */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[25px] sm:gap-[30px] md:gap-[35px]">
             {aboutCards.map((card, index) => (
               <motion.div
                 key={index}
@@ -852,7 +851,7 @@ const Home = () => {
                     "0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(59, 130, 246, 0.1)",
                   borderColor: "#3B82F6",
                 }}
-                className="relative bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[24px] p-[45px_35px] overflow-hidden transition-all duration-500 hover:border-blue-500"
+                className="relative bg-slate-800/70 backdrop-blur-[20px] border border-slate-700/50 rounded-[20px] sm:rounded-[22px] md:rounded-[24px] p-[30px_25px] sm:p-[35px_30px] md:p-[45px_35px] overflow-hidden transition-all duration-500 hover:border-blue-500"
                 style={{
                   background: "rgba(15, 23, 42, 0.7)",
                   border: "1px solid rgba(51, 65, 85, 0.5)",
@@ -860,27 +859,7 @@ const Home = () => {
                   WebkitBackdropFilter: "blur(20px)",
                 }}
               >
-                {/* Gradient Background Effects */}
-                <div
-                  className="absolute inset-0 opacity-0 transition-opacity duration-500"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(20, 184, 166, 0.03))",
-                  }}
-                />
-                <div
-                  className="absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 50%)",
-                    top: "-50%",
-                    left: "-50%",
-                    width: "200%",
-                    height: "200%",
-                  }}
-                />
-
-                {/* Card Number */}
+                {/* Card Number - Responsive */}
                 <motion.span
                   initial={{ opacity: 0.06 }}
                   whileInView={{ opacity: 0.15 }}
@@ -889,12 +868,12 @@ const Home = () => {
                     textShadow: "0 0 30px rgba(59, 130, 246, 0.2)",
                   }}
                   transition={{ duration: 0.4 }}
-                  className="absolute top-[25px] right-[35px] font-serif text-[4rem] font-semibold text-blue-500/10"
+                  className="absolute top-[20px] sm:top-[25px] md:top-[25px] right-[25px] sm:right-[30px] md:right-[35px] font-serif text-[3rem] sm:text-[3.5rem] md:text-[4rem] font-semibold text-blue-500/10"
                 >
                   {card.number}
                 </motion.span>
 
-                {/* Card Icon */}
+                {/* Card Icon - Responsive */}
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
@@ -904,7 +883,7 @@ const Home = () => {
                     rotate: 5,
                     boxShadow: "0 15px 40px rgba(59, 130, 246, 0.5)",
                   }}
-                  className="w-[65px] h-[65px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-[18px] flex items-center justify-center text-[1.6rem] mb-[28px] relative z-1 shadow-lg"
+                  className="w-[55px] h-[55px] sm:w-[60px] sm:h-[60px] md:w-[65px] md:h-[65px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-[16px] sm:rounded-[18px] flex items-center justify-center text-[1.4rem] sm:text-[1.5rem] md:text-[1.6rem] mb-[22px] sm:mb-[25px] md:mb-[28px] relative z-1 shadow-lg"
                   style={{
                     boxShadow: "0 8px 30px rgba(59, 130, 246, 0.35)",
                   }}
@@ -912,12 +891,12 @@ const Home = () => {
                   {card.icon}
                 </motion.div>
 
-                {/* Card Content */}
+                {/* Card Content - Responsive */}
                 <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.4 }}
-                  className="text-[1.35rem] font-semibold text-white mb-[15px] relative z-1"
+                  className="text-[1.2rem] sm:text-[1.3rem] md:text-[1.35rem] font-semibold text-white mb-[12px] sm:mb-[14px] md:mb-[15px] relative z-1"
                 >
                   {card.title}
                 </motion.h3>
@@ -925,7 +904,7 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.5 }}
-                  className="text-gray-400 text-[0.95rem] leading-[1.8] relative z-1"
+                  className="text-gray-400 text-[0.85rem] sm:text-[0.9rem] md:text-[0.95rem] leading-[1.8] relative z-1"
                 >
                   {card.desc}
                 </motion.p>
@@ -934,13 +913,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-      // Brands Section - Replace the existing brands section with this:
-      {/* Brands Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
+
+      {/* Brands Section - Responsive */}
+      <section className="py-[80px_20px] sm:py-[120px_30px] md:py-[150px_60px] bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_30%,rgba(59,130,246,0.08)_0%,transparent_50%),radial-gradient(ellipse_at_80%_70%,rgba(20,184,166,0.05)_0%,transparent_50%)] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start mb-16">
+        <div className="max-w-7xl mx-auto px-[20px] sm:px-[30px] md:px-[60px] relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start mb-12 sm:mb-16">
             <div className="mb-8 md:mb-0">
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
@@ -957,7 +936,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-3xl md:text-5xl font-bold text-white max-w-2xl leading-tight font-serif"
+                className="text-2xl sm:text-3xl md:text-5xl font-bold text-white max-w-2xl leading-tight font-serif"
               >
                 Diverse Brands, Unified Excellence
               </motion.h2>
@@ -969,17 +948,17 @@ const Home = () => {
               transition={{ duration: 0.7 }}
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all"
+              className="inline-flex items-center gap-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/50 transition-all text-[0.9rem] sm:text-base"
             >
               View All Brands
-              <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+              <span className="w-6 h-6 sm:w-7 sm:h-7 bg-white/20 rounded-full flex items-center justify-center">
                 →
               </span>
             </motion.a>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center justify-between gap-4 mb-8">
+          {/* Navigation Arrows - Responsive */}
+          <div className="flex items-center justify-between gap-4 mb-6 sm:mb-8">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -987,7 +966,7 @@ const Home = () => {
                 setCurrentBrandIndex(Math.max(0, currentBrandIndex - 1))
               }
               disabled={currentBrandIndex === 0}
-              className="w-12 h-12 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               ←
             </motion.button>
@@ -1001,17 +980,17 @@ const Home = () => {
                 )
               }
               disabled={currentBrandIndex >= brandCards.length - 3}
-              className="w-12 h-12 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:border-transparent transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               →
             </motion.button>
           </div>
 
-          {/* Brands Display */}
+          {/* Brands Display - Responsive */}
           <div className="relative overflow-hidden">
             <motion.div
-              className="flex gap-8"
-              animate={{ x: `-${currentBrandIndex * (320 + 32)}px` }}
+              className="flex gap-6 sm:gap-8"
+              animate={{ x: `-${currentBrandIndex * (280 + 24)}px` }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {brandCards.map((brand, index) => (
@@ -1028,24 +1007,24 @@ const Home = () => {
                     boxShadow:
                       "0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(59, 130, 246, 0.15)",
                   }}
-                  className="flex-shrink-0 w-80 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 relative overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-[260px] sm:w-[280px] md:w-80 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 sm:p-8 relative overflow-hidden cursor-pointer group"
                 >
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-teal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 3, y: -5 }}
-                    className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg shadow-blue-500/40"
+                    className="w-[60px] h-[60px] sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-[1.5rem] sm:text-2xl font-bold text-white mb-4 sm:mb-6 shadow-lg shadow-blue-500/40"
                   >
                     {brand.logo}
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-white mb-3">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">
                     {brand.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed mb-6">
+                  <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6">
                     {brand.desc}
                   </p>
                   <motion.div
                     whileHover={{ x: 8, scale: 1.1 }}
-                    className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-xl group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-blue-600 group-hover:text-white transition-all duration-300"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 text-lg sm:text-xl group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-blue-600 group-hover:text-white transition-all duration-300"
                   >
                     →
                   </motion.div>
@@ -1054,8 +1033,8 @@ const Home = () => {
             </motion.div>
           </div>
 
-          {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
+          {/* Dots Indicator - Responsive */}
+          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
             {Array.from({ length: Math.max(1, brandCards.length - 2) }).map(
               (_, index) => (
                 <motion.button
@@ -1063,7 +1042,7 @@ const Home = () => {
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setCurrentBrandIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentBrandIndex
                       ? "bg-gradient-to-r from-blue-500 to-blue-600 scale-125 shadow-lg shadow-blue-500/40"
                       : "bg-slate-700 hover:bg-slate-600"
@@ -1074,12 +1053,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Stats Section */}
-      <section className="py-20 md:py-24 relative overflow-hidden">
+
+      {/* Stats Section - Responsive */}
+      <section className="py-[60px_20px] sm:py-[80px_30px] md:py-[100px_60px] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(59,130,246,0.05)_0%,transparent_50%),radial-gradient(ellipse_at_80%_50%,rgba(20,184,166,0.04)_0%,transparent_50%)] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto px-[20px] sm:px-[30px] md:px-[60px] relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {statsData.map((stat, index) => (
               <motion.div
                 key={index}
@@ -1091,15 +1071,15 @@ const Home = () => {
                   scale: 1.02,
                   boxShadow: "0 25px 50px rgba(0, 0, 0, 0.3)",
                 }}
-                className="text-center bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-8 transition-all duration-500 group"
+                className="text-center bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 sm:p-8 transition-all duration-500 group"
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-16 h-16 bg-blue-500/10 border border-slate-700/50 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 transition-all group-hover:bg-blue-500/20 group-hover:border-blue-500/50"
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500/10 border border-slate-700/50 rounded-2xl flex items-center justify-center text-xl sm:text-2xl mx-auto mb-4 sm:mb-6 transition-all group-hover:bg-blue-500/20 group-hover:border-blue-500/50"
                 >
                   {stat.icon}
                 </motion.div>
-                <div className="text-4xl md:text-5xl font-bold text-white mb-3 font-serif">
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2 sm:mb-3 font-serif">
                   <span
                     className="stat-number"
                     data-target={stat.number.replace(/[^0-9]/g, "")}
@@ -1109,7 +1089,7 @@ const Home = () => {
                   </span>
                   <span className="text-blue-400">{stat.suffix}</span>
                 </div>
-                <div className="text-gray-500 text-sm uppercase tracking-widest">
+                <div className="text-gray-500 text-xs sm:text-sm uppercase tracking-widest">
                   {stat.label}
                 </div>
               </motion.div>
@@ -1117,11 +1097,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* Testimonials Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-radial-gradient(circle,rgba(59,130,246,0.08)_0%,transparent_60%) pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+      {/* Testimonials Section - Responsive */}
+      <section className="py-[80px_20px] sm:py-[120px_30px] md:py-[150px_60px] bg-gradient-to-b from-slate-900 to-black relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] bg-radial-gradient(circle,rgba(59,130,246,0.08)_0%,transparent_60%) pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-[20px] sm:px-[30px] md:px-[60px] text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -1138,7 +1119,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-16 font-serif"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-12 sm:mb-16 font-serif"
           >
             What Leaders Say
           </motion.h2>
@@ -1150,22 +1131,22 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-[10rem] font-bold text-blue-500/10 font-serif leading-none">
+            <div className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 text-[6rem] sm:text-[8rem] md:text-[10rem] font-bold text-blue-500/10 font-serif leading-none">
               "
             </div>
             <div className="relative z-10">
-              <p className="text-xl md:text-2xl text-white leading-relaxed mb-12 font-serif">
+              <p className="text-lg sm:text-xl md:text-2xl text-white leading-relaxed mb-8 sm:mb-12 font-serif">
                 {testimonials[currentTestimonial].text}
               </p>
-              <div className="flex items-center justify-center gap-5">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-xl font-semibold shadow-lg shadow-blue-500/40">
+              <div className="flex items-center justify-center gap-4 sm:gap-5">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-semibold shadow-lg shadow-blue-500/40">
                   {testimonials[currentTestimonial].initials}
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-semibold text-white">
+                  <h4 className="text-base sm:text-lg font-semibold text-white">
                     {testimonials[currentTestimonial].author}
                   </h4>
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 text-sm">
                     {testimonials[currentTestimonial].role}
                   </p>
                 </div>
@@ -1173,14 +1154,14 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <div className="flex justify-center gap-3 mt-12">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-8 sm:mt-12">
             {testimonials.map((_, index) => (
               <motion.button
                 key={index}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setCurrentTestimonial(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentTestimonial
                     ? "bg-gradient-to-r from-blue-500 to-blue-600 scale-125 shadow-lg shadow-blue-500/40"
                     : "bg-slate-700 hover:bg-slate-600"
@@ -1190,8 +1171,9 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* CTA Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-slate-900 relative overflow-hidden">
+
+      {/* CTA Section - Responsive */}
+      <section className="py-[80px_20px] sm:py-[120px_30px] md:py-[150px_60px] bg-gradient-to-br from-blue-600 via-blue-700 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.08)_0%,transparent_40%),radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05)_0%,transparent_40%)] pointer-events-none" />
 
         <motion.div
@@ -1200,7 +1182,7 @@ const Home = () => {
             x: [-150, -100, -150],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-60 -right-20 w-[500px] h-[500px] rounded-full border border-white/10 pointer-events-none"
+          className="absolute -top-60 -right-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] rounded-full border border-white/10 pointer-events-none"
         />
         <motion.div
           animate={{
@@ -1208,15 +1190,15 @@ const Home = () => {
             x: [-150, -200, -150],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-60 -left-20 w-[400px] h-[400px] rounded-full border border-white/10 pointer-events-none"
+          className="absolute -bottom-60 -left-20 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] rounded-full border border-white/10 pointer-events-none"
         />
 
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-[20px] sm:px-[30px] md:px-[60px] text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8"
+            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8"
           >
             <span className="text-white text-sm">
               ✦ Ready to Transform Your Business?
@@ -1227,7 +1209,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight font-serif"
+            className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight font-serif"
           >
             Partner with{" "}
             <span className="bg-gradient-to-r from-blue-200 via-teal-200 to-purple-200 bg-clip-text text-transparent">
@@ -1239,7 +1221,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-blue-100/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-blue-100/70 text-base sm:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             Join the Panorama family and be part of a legacy that's shaping the
             future of global business.
@@ -1249,16 +1231,16 @@ const Home = () => {
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <motion.a
               href="/contact"
               whileHover={{ scale: 1.04, y: -5 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-4 bg-white text-blue-700 px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-white/20 transition-all"
+              className="inline-flex items-center gap-3 sm:gap-4 bg-white text-blue-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold shadow-lg hover:shadow-xl hover:shadow-white/20 transition-all text-[0.9rem] sm:text-base"
             >
               Get in Touch
-              <span className="w-7 h-7 bg-blue-100 rounded-full flex items-center justify-center">
+              <span className="w-5 h-5 sm:w-7 sm:h-7 bg-blue-100 rounded-full flex items-center justify-center">
                 →
               </span>
             </motion.a>
@@ -1266,22 +1248,22 @@ const Home = () => {
               href="/brands"
               whileHover={{ scale: 1.04, y: -5 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-4 bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-medium hover:bg-white/10 hover:border-white/50 transition-all"
+              className="inline-flex items-center gap-3 sm:gap-4 bg-transparent border-2 border-white/30 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-white/10 hover:border-white/50 transition-all text-[0.9rem] sm:text-base"
             >
               Explore Opportunities
             </motion.a>
           </motion.div>
         </div>
       </section>
-      {/* Footer removed — use central `Footer` component instead to avoid duplication */}
-      {/* Back to Top Button */}
+
+      {/* Back to Top Button - Responsive */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         whileHover={{ scale: 1.1, y: -5 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-10 right-10 w-14 h-14 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-blue-400 text-xl hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:text-white hover:shadow-xl hover:shadow-blue-500/40 transition-all z-50"
+        className="fixed bottom-6 sm:bottom-10 right-6 sm:right-10 w-12 h-12 sm:w-14 sm:h-14 bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 rounded-full flex items-center justify-center text-blue-400 text-lg sm:text-xl hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 hover:text-white hover:shadow-xl hover:shadow-blue-500/40 transition-all z-50"
       >
         ↑
       </motion.button>
